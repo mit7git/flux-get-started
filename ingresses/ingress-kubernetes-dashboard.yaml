@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kubernetes-dashboard-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "10.204.35.197" # 先ほど、予約したstatic-ipを指定
+spec:
+  backend:
+    serviceName: kubernetes-dashboard # 前の手順で作成したServiceの名前を指定
+    servicePort: 443
